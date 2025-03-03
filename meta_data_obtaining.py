@@ -60,4 +60,4 @@ def get_meta_data_json(input_file):
         _out.write("\n]")
 
 #print(search_movie("12 Monkeys"))
-get_meta_data_json("first_three_genre.txt")
+get_meta_data_json("data/first_three_genre.txt")

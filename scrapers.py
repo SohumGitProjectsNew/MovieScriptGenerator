@@ -75,9 +75,12 @@ def get_script_text(scipt_link):
 
     soup = BeautifulSoup(page.content, "html.parser")
 
+    
     try:
-        script = ''.join(str(content) for content in soup.find("pre").contents)
-        return(script)
+        pre_tags = soup.find_all("pre")
+        if pre_tags:
+            script = ''.join(str(content) for content in pre_tags[-1].contents)
+            return script
 
     except:
         print("could not get movie from: " + str(url_page))
@@ -122,5 +125,5 @@ def wrapper(save_file_path, genre, limit):
     json_data = convert_to_jason()
     save_to_file(save_file_path,json_data) 
 
-wrapper("first_three_genre.txt", True, 3)
-#wrapper("movie_scripts.txt", False, None)
+wrapper("data/first_three_genre.txt", True, 3)
+#wrapper("data/movie_scripts.txt", False, None)
