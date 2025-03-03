@@ -21,7 +21,6 @@ del _cd_
 
 
 # PYTHON PROJECT IMPORTS
-from data.charloader import load_words_from_file
 from models.ngram.unigram import Unigram
 from vocab import START_TOKEN, END_TOKEN
 
